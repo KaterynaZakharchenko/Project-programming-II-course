@@ -1,0 +1,19 @@
+{% extends 'core/base.html' %}
+
+{% block title %}
+Logout
+{% endblock %}
+
+{% block content %}
+<div class="w-1/2 my-6 p-6 mx-auto bg-gray-100 rounded-xl">
+    <h1 class="mb-6 text-3xl">Log out</h1>
+
+    <form method="post" action=".">
+        {% csrf_token %}
+
+        <p class="inline-block mb-2">Are you sure you want to log out?</p>
+
+        <a href="{% url 'core:logout' %}" class="px-6 py-3 text-lg font-semibold bg-red-500 text-white rounded-xl hover:bg-red-700 ml-4">Log out</a>
+    </form>
+</div>
+{% endblock %}
